@@ -1,7 +1,7 @@
 const pokedex = document.querySelector('.poke-container');
 const str1 = "0";
 
-for(i = 1; i <= 150; i++) {
+for(i = 1; i <= 898; i++) {
     fetch('https://pokeapi.co/api/v2/pokemon/' + i)
     .then(result => result.json())
     .then(pokemon => insertPokemon(
@@ -11,7 +11,6 @@ for(i = 1; i <= 150; i++) {
         pokemon.types[0].type.name
     ));
 }
-
 
 function insertPokemon (sprite, name, id, type) {
     // let parseId = id;
