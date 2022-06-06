@@ -29,11 +29,14 @@ function insertPokemon (sprite, name, id, type) {
     </div>
     </div>
     `
-    var main = document.getElementById( 'main' );
-[].map.call( main.children, Object ).sort( function ( a, b ) {
-    return +a.id.match( /\d+/ ) - +b.id.match( /\d+/ );
-}).forEach( function ( elem ) {
-    main.appendChild( elem );
-});
+    sortHtml();
 }
 
+function sortHtml () {
+    var main = document.getElementById( 'main' );
+    [].map.call( main.children, Object ).sort( function ( a, b ) {
+        return +a.id.match( /\d+/ ) - +b.id.match( /\d+/ );
+    }).forEach( function ( elem ) {
+        main.appendChild( elem );
+    });
+}
