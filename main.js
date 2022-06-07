@@ -9,6 +9,8 @@ for(i = 1; i <= 150; i++) {
         pokemon.id,
         pokemon.types[0].type.name
     ));
+
+   
 }
 
 function insertPokemon (sprite, name, id, type) {
@@ -31,10 +33,10 @@ function insertPokemon (sprite, name, id, type) {
 }
 
 function sortHtml () {
+
+    // Definisco un collegamento al Container Padre
     let main = document.getElementById( 'main' );
-    [].map.call( main.children, Object ).sort( function ( a, b ) {
-        return +a.id.match( /\d+/ ) - +b.id.match( /\d+/ );
-    }).forEach( function ( elem ) {
-        main.appendChild( elem );
-    });
+    [].map.call( main.children, Object )
+    .sort( ( a, b ) => +a.id.match( /\d+/ ) - +b.id.match( /\d+/ ))
+    .forEach((e) => { main.appendChild(e); });
 }
