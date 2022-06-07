@@ -1,4 +1,4 @@
-const pokedex = document.querySelector('.poke-container');
+const pokedex = document.getElementById('poke-container');
 
 for(i = 1; i <= 150; i++) {
     fetch('https://pokeapi.co/api/v2/pokemon/' + i)
@@ -17,7 +17,7 @@ function insertPokemon (sprite, name, id, type) {
     // let parseId = id;
     // parseId = id.padStart(2, "0");
     pokedex.innerHTML += `        
-    <div id="dv_${id}" class="poke-card ${type}">
+    <div id="${id}" class="poke-card ${type}">
     <div class="poke-sprite">
         <img src="${sprite}">
     </div>
@@ -33,10 +33,8 @@ function insertPokemon (sprite, name, id, type) {
 }
 
 function sortHtml () {
-
-    // Definisco un collegamento al Container Padre
-    let main = document.getElementById( 'main' );
-    [].map.call( main.children, Object )
-    .sort( ( a, b ) => +a.id.match( /\d+/ ) - +b.id.match( /\d+/ ))
+    [].map
+    .call(pokedex.children, Object)
+    .sort((a, b) => a.id - b.id)
     .forEach((e) => { main.appendChild(e); });
 }
