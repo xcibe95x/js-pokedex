@@ -1,4 +1,4 @@
-const pokedex = document.getElementById('poke-container');
+const pokedex = document.querySelector('.poke-container');
 
 for(i = 1; i <= 150; i++) {
     fetch('https://pokeapi.co/api/v2/pokemon/' + i)
@@ -14,8 +14,7 @@ for(i = 1; i <= 150; i++) {
 }
 
 function insertPokemon (sprite, name, id, type) {
-    // let parseId = id;
-    // parseId = id.padStart(2, "0");
+
     pokedex.innerHTML += `        
     <div id="${id}" class="poke-card ${type}">
     <div class="poke-sprite">
@@ -36,5 +35,5 @@ function sortHtml () {
     [].map
     .call(pokedex.children, Object)
     .sort((a, b) => a.id - b.id)
-    .forEach((e) => { main.appendChild(e); });
+    .forEach((e) => pokedex.appendChild(e));
 }

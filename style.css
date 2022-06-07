@@ -15,7 +15,7 @@ header {
     letter-spacing: 10px;
 }
 
-#poke-container {
+.poke-container {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
