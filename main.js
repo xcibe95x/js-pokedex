@@ -7,13 +7,12 @@ for(i = 1; i <= 150; i++) {
         pokemon.sprites.front_default,
         pokemon.name,
         pokemon.id,
-        pokemon.types[0].type.name
+        pokemon.types[0].type.name,
+        i
     ));
-
-   
 }
 
-function insertPokemon (sprite, name, id, type) {
+function insertPokemon (sprite, name, id, type, i) {
 
     pokedex.innerHTML += `        
     <div id="${id}" class="poke-card ${type}">
@@ -28,12 +27,13 @@ function insertPokemon (sprite, name, id, type) {
     </div>
     </div>
     `
-    sortHtml();
+    if (i >= 150) {
+        sortHtml();
+    }
 }
 
 function sortHtml () {
-    [].map
-    .call(pokedex.children, Object)
+    Array.from(pokedex.children)
     .sort((a, b) => a.id - b.id)
     .forEach((e) => pokedex.appendChild(e));
 }
