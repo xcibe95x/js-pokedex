@@ -13,7 +13,6 @@ for(i = 1; i <= 150; i++) {
 }
 
 function insertPokemon (sprite, name, id, type, i) {
-
     pokedex.innerHTML += `        
     <div id="${id}" class="poke-card ${type}">
     <div class="poke-sprite">
